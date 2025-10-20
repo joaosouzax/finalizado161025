@@ -395,7 +395,7 @@
         window.close = () => document.querySelectorAll('.modal').forEach(m => m.remove());
 
 
-        const Nsku = Math.floor(Math.random() * 100)
+        let Nsku = Math.floor(Math.random() * 100);
         
         window.openProd = (p = null) => {
             const isEdit = p !== null;
