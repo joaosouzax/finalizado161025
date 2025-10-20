@@ -484,7 +484,7 @@
         window.showBar = (sku) => {
             const m = document.createElement('div');
             m.className = 'modal';
-            m.innerHTML = `<div class="modal-content barcode-modal"><h3 class="modal-title">Código de Barras</h3><canvas id="barcode"></canvas><button class="btn-primary" onclick="close()">Fechar</button></div>`;
+            m.innerHTML = `<div class="modal-content barcode-modal"><h3 class="modal-title">Código de Barras</h3><canvas id="barcode"></canvas><button class="btn-primary" onclick="window.close()">Fechar</button></div>`;
             document.body.appendChild(m);
             setTimeout(() => JsBarcode("#barcode", sku, {format: "CODE128", width: 2, height: 100, displayValue: true}), 100);
         }
@@ -494,7 +494,7 @@
             const data = `SKU:${p.sku}|NOME:${p.name}|PRECO:R${p.price.toFixed(2)}|ESTOQUE:${p.stock}`;
             const m = document.createElement('div');
             m.className = 'modal';
-            m.innerHTML = `<div class="modal-content barcode-modal"><h3 class="modal-title">QR Code - ${p.name}</h3><div id="qrcode-container"></div><button class="btn-primary" onclick="close()">Fechar</button></div>`;
+            m.innerHTML = `<div class="modal-content barcode-modal"><h3 class="modal-title">QR Code - ${p.name}</h3><div id="qrcode-container"></div><button class="btn-primary" onclick="window.close()">Fechar</button></div>`;
             document.body.appendChild(m);
             setTimeout(() => new QRCode(document.getElementById("qrcode-container"), {text: data, width: 256, height: 256, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.H}), 100);
         }
